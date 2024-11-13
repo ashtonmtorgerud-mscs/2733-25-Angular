@@ -1,0 +1,16 @@
+<div class="container">
+    <h2 class="mt-3">About? About What?</h2>
+    <hr>
+    <label for="box1" class="" style="padding-right: 10px;">Value One:</label> 
+    <input type="text" class="" itemid="box1" [(ngModel)]="valueOne" placeholder="Input a number" id=""> <br>
+    <label for="box1" class="" style="padding-right: 10px;">Value Two:</label> 
+    <input type="text" class="" itemid="box2" [(ngModel)]="valueTwo" placeholder="Input a number" id=""> <br>
+    <button type="button" class="btn btn-primary my-1" (click)="add()" style="font-weight: 150;">Add</button>
+    <button type="button" class="btn btn-primary my-1" (click)="subtract()" style="font-weight: 150;">Subtract</button>
+    <button type="button" class="btn btn-primary my-1" (click)="multiply()" style="font-weight: 150;">Multiply</button>
+    <button type="button" class="btn btn-primary my-1" (click)="divide()" style="font-weight: 150;">Divide</button>
+    <button type="button" class="btn btn-primary my-1" (click)="power()" style="font-weight: 150;">Power</button>
+
+    <p class="h3">The result is equal to {{result}}</p>
+
+</div>

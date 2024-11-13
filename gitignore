@@ -1,0 +1,25 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+tmp/
+temp/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+
+
+
+#This GitIgnore File was instructed by ChatGpt, full credit is due to it, I am not trying to claim credit
