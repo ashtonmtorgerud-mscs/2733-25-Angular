@@ -9,28 +9,30 @@
             <span class="m-2">{{ accountsService.users[$index].name }}</span>
             <!-- <span>{{ accountsService.users[$index].image }}</span> -->
         </button>
-        <a href="" (click)="accountsService.delUser($index)">delete</a> <br>
+        <button class="btn btn-link" (click)="accountsService.delUser($index)">delete</button> <br>
         <!-- <a href="" (click)="accountsService.addUser()">add</a> -->
         }
         <!-- <p>{{accountsService.selectedUser}}</p> -->
     </div>
     <!-- <h2>{{selectedUser}}</h2> -->
     <div class="m-3 col" style="display: inline-block;">
-        @if (accountsService.selectedUser == undefined){
+        @if (accountsService.selectedUser.name == ''){
 
         } @else{
         <div>
-            <h6>{{accountsService.selectedUser}}</h6>
             <img 
-            src="https://preview.redd.it/pd94fzbrjlr91.jpg?width=340&format=pjpg&auto=webp&s=009ff1c534b537ee90d3abcc6ed08a5f56647f5c" 
-            height="150" width="150"> <p>{{accountsService.imagePath(accountsService.selectedUserIndex).toString()}}</p>
+            src="{{accountsService.selectedUser.image}}" 
+            height="150" width="150">
             <br>
-            <h2>{{accountsService.selectedUser}}</h2>
+            <h2>{{accountsService.selectedUser.name}}</h2>
+            <label for="" class="col-form-label">User ID:     </label>
             <input type="text" [(ngModel)]="accountsService.editUserId" name="" placeholder="ID" id=""><br>
+            <label for="" class="col-form-label">User Name:     </label>
             <input type="text" [(ngModel)]="accountsService.editUserName" name="" placeholder="Name" id=""><br>
+            <label for="" class="col-form-label">User Image:     </label>
             <input type="text" [(ngModel)]="accountsService.editUserIcon" name="" placeholder="Image" id=""><br>
             <button type="button" class="btn btn-secondary" (click)="accountsService.editEverything()">Save</button>
-            <p>{{accountsService.editUserId}}</p>
+            <!-- <p>{{accountsService.editUserId}}</p> -->
         </div>
         }
 

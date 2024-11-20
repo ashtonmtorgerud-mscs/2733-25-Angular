@@ -18,18 +18,19 @@ export class AccountsService {
   newUserName = '';
   newUserIcon = '';
 
+  editUserId = '';
+  editUserName = '';
+  editUserIcon = '';
+
   onSelectUser(i: number) {
     // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
     // this.selectedUser = DUMMY_USERS[randomIndex];
     this.selectedUser = this.users[i];
     this.selectedUserIndex = String(i);
+    this.editUserId = this.users[i].id;
+    this.editUserName = this.users[i].name;
+    this.editUserIcon = this.users[i].image;
   }
-
-  editUserId = 'editUserId';
-  editUserName = '';
-  editUserIcon = '';
-
-
 
   printALine(message: string){
     console.log(message);
@@ -43,6 +44,15 @@ export class AccountsService {
 
   delUser(i: number) {
     this.users.splice(i,1);
+    this.selectedUser = {id: '', name: '', image: ''}
+    
+    // let newUsers = [];
+    // for (let j = 0; j < this.users.length; i++){
+    //   if (j !== i){
+    //     newUsers.push(this.users[j]);
+    //   }
+    // }
+    // this.users = newUsers;
   }
 
   addUser() {
@@ -59,9 +69,9 @@ export class AccountsService {
   }
 
   editEverything(){
-    // this.selectedUser.name = this.editUserId;
-    // this.selectedUser.id = this.editUserName;
-    // this.selectedUser.image = this.editUserIcon;
+    this.users[Number(this.selectedUserIndex)].id = this.editUserId;
+    this.users[Number(this.selectedUserIndex)].name = this.editUserName;
+    this.users[Number(this.selectedUserIndex)].image = this.editUserIcon;
   }
 
 
